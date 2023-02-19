@@ -10,4 +10,9 @@ public class MainMenu : MonoBehaviour
     {
         audio.Play();
     }
+
+    public void StopSFX()
+    {
+        audio.Stop();
+    }
 }
