@@ -6,9 +6,12 @@ public class Reward : MonoBehaviour
 {
     public float Duration;
     private float _timeElapse;
+    public Gradient gradient;
+    public SpriteRenderer renderer;
     // Update is called once per frame
     void Update()
     {
+        
         _timeElapse += Time.deltaTime;
     }
 
@@ -17,6 +20,10 @@ public class Reward : MonoBehaviour
         if (_timeElapse > Duration)
         {
             Destroy(gameObject);
+        }
+        else
+        {
+            renderer.color = gradient.Evaluate((float)_timeElapse/(float)Duration);
         }
     }
 
